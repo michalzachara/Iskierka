@@ -1,16 +1,15 @@
-import { ReactNode } from 'react';
 
 interface LinkProps {
 	href: string;
 	dataType: string;
 	activeLink: string;
 	onClick: (type: string) => void;
-	children: ReactNode;
+	child: string;
 	className?: string;
 	isMobile?: boolean;
 }
 
-const Link = ({ href, dataType, activeLink, onClick, children, className, isMobile = false }: LinkProps) => {
+const Link = ({ href, dataType, activeLink, onClick, child, className, isMobile = false }: LinkProps) => {
 	const isActive = activeLink === dataType;
 
 	return (
@@ -22,7 +21,7 @@ const Link = ({ href, dataType, activeLink, onClick, children, className, isMobi
 				isActive ? 'active' : ''
 			} ${isMobile ? 'link-mobile' : 'link-computer'}`}
 		>
-			{children}
+			{child}
 		</a>
 	);
 };

@@ -14,89 +14,97 @@ const Navbar = () => {
 
 	return (
 		<>
-			<nav className="w-full xs:h-[5rem] md:h-24 bg-gray-100 z-30 flex justify-around items-center shadow-md">
-				<div className="xs:text-2xl md:text-3xl font-bold text-[#0087ca]">ISKIERKA</div>
+			<nav className="w-full h-24 bg-gray-100 z-30 flex md:justify-around xs:justify-between items-center shadow-md">
+				{/* Animowany gradient w tekście "ISKIERKA WNM" */}
+				<div className="xs:ml-10 xs:text-2xl md:text-3xl font-bold animated-gradient">
+					ISKIERKA WNM
+				</div>
 				<div className="md:flex xs:hidden justify-between gap-10">
 					<Link
 						href="#"
 						dataType="home"
 						activeLink={activeLink}
 						onClick={handleLinkClick}
-					>
-						Home
-					</Link>
+						child="Home" // Use the `child` prop
+					/>
 					<Link
-						href="#"
+						href="#about"
 						dataType="about"
 						activeLink={activeLink}
 						onClick={handleLinkClick}
-					>
-						About
-					</Link>
+						child="About" // Use the `child` prop
+					/>
 					<Link
-						href="#"
+						href="#therapy"
 						dataType="therapy"
 						activeLink={activeLink}
 						onClick={handleLinkClick}
-					>
-						Therapy
-					</Link>
+						child="Therapy" // Use the `child` prop
+					/>
 					<Link
-						href="#"
+						href="#contact"
 						dataType="contact"
 						activeLink={activeLink}
 						onClick={handleLinkClick}
-					>
-						Contact
-					</Link>
+						child="Contact" // Use the `child` prop
+					/>
 				</div>
-				<div className="md:hidden cursor-pointer duration-75 transition-all hover:scale-110">
-					
-						{/* <IoClose onClick={() => setIsOpen(false)} size={35} className="text-[#0087ca]" /> */}
-					
-						<RxHamburgerMenu onClick={() => setIsOpen(true)} size={35} className="text-[#0087ca]" />
+				<div className="md:hidden cursor-pointer duration-75 transition-all hover:scale-110 xs:mr-10">
+					<RxHamburgerMenu onClick={() => setIsOpen(true)} size={35} className="text-[#0087ca]" />
 				</div>
 			</nav>
+
+			{/* Mobile Menu with Right-to-Left Animation */}
+			<div
+				className={`md:hidden fixed top-0 right-0 w-full h-full bg-gray-100/95 backdrop-blur-sm backdrop-opacity-95 flex flex-col justify-center items-center gap-16 z-20 transition-all duration-300 ease-in-out ${
+					isOpen ? 'translate-x-0' : 'translate-x-full'
+				}`}
+			>
+				<IoClose
+					onClick={() => setIsOpen(false)}
+					size={40}
+					className="cursor-pointer text-[#0087ca] absolute top-7 right-10 hover:rotate-90 transition-transform duration-300"
+				/>
+				<Link
+					href="#"
+					dataType="home"
+					activeLink={activeLink}
+					onClick={handleLinkClick}
+					child="Home" // Use the `child` prop
+					isMobile
+				/>
+				<Link
+					href="#about"
+					dataType="about"
+					activeLink={activeLink}
+					onClick={handleLinkClick}
+					child="About" // Use the `child` prop
+					isMobile
+				/>
+				<Link
+					href="#therapy"
+					dataType="therapy"
+					activeLink={activeLink}
+					onClick={handleLinkClick}
+					child="Therapy" // Use the `child` prop
+					isMobile
+				/>
+				<Link
+					href="#contact"
+					dataType="contact"
+					activeLink={activeLink}
+					onClick={handleLinkClick}
+					child="Contact" // Use the `child` prop
+					isMobile
+				/>
+			</div>
+
+			{/* Backdrop Overlay */}
 			{isOpen && (
-				<div className="md:hidden fixed top-0 left-0 w-full h-full bg-gray-100/95 backdrop-blur-sm flex flex-col justify-center items-center gap-10 z-20">
-					<IoClose onClick={() => setIsOpen(false)} size={35} className="text-[#0087ca] absolute top-10 right-10" />
-					<Link
-						href="#"
-						dataType="home"
-						activeLink={activeLink}
-						onClick={handleLinkClick}
-						isMobile
-					>
-						Home
-					</Link>
-					<Link
-						href="#"
-						dataType="about"
-						activeLink={activeLink}
-						onClick={handleLinkClick}
-						isMobile
-					>
-						About
-					</Link>
-					<Link
-						href="#"
-						dataType="therapy"
-						activeLink={activeLink}
-						onClick={handleLinkClick}
-						isMobile
-					>
-						Therapy
-					</Link>
-					<Link
-						href="#"
-						dataType="contact"
-						activeLink={activeLink}
-						onClick={handleLinkClick}
-						isMobile
-					>
-						Contact
-					</Link>
-				</div>
+				<div
+					className="md:hidden fixed top-0 left-0 w-full h-full bg-black/30 backdrop-blur-sm z-10"
+					onClick={() => setIsOpen(false)}
+				/>
 			)}
 		</>
 	);

@@ -52,3 +52,24 @@
 		@apply text-3xl text-gray-700 hover:text-[#0087ca] transition-all duration-300;
 	}
 }
+
+@keyframes gradientAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.animated-gradient {
+	background: linear-gradient(270deg, #0087ca, #00b894, #0087ca);
+	background-size: 200% 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradientAnimation 5s ease infinite;
+}
