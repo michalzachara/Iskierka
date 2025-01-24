@@ -2,7 +2,7 @@ import './Header.css'
 
 const Heading = () => {
 	return (
-		<header className="mt-24 w-full h-[40em] bg-teal-200 flex justify-center items-center bg-[url('../../assets/img1.jpg')] bg-cover relative z-10 overflow-hidden">
+		<header className="mt-24 w-full h-[40em] bg-teal-200 flex justify-center items-center bg-[url('/header/img2.jpg')] bg-cover relative z-10 overflow-hidden">
 			<div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/50 to-black/70 -z-10"></div>
 
 			<div className="h-[20em] flex flex-col items-center justify-evenly z-30 xs:gap-20 md:gap-7 lg:gap-10 text-center">

@@ -1,19 +1,53 @@
+import { motion } from 'framer-motion';
+
 const Contact = () => {
+  // Definicje animacji
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } },
+  };
+
+  const staggerContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.2, // Opóźnienie między animacjami dzieci
+      },
+    },
+  };
+
   return (
     <section className="w-full p-6 bg-orange-50 font-sans flex items-center justify-center" id="kontakt">
-      <div className="max-w-4xl w-full bg-orange-50 p-8 rounded-xl">
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={staggerContainer}
+        viewport={{ once: true }}
+        className="max-w-4xl w-full bg-orange-50 p-8 rounded-xl"
+      >
         {/* Nagłówek */}
-        <h2 className="text-5xl font-bold text-purple-900 mb-4 text-center animate-fadeIn">
+        <motion.h2
+          variants={fadeInUp}
+          className="text-5xl font-bold text-purple-900 mb-4 text-center"
+        >
           Kontakt
-        </h2>
-        <p className="text-xl text-gray-700 mb-8 text-center animate-fadeIn delay-100">
+        </motion.h2>
+        <motion.p
+          variants={fadeInUp}
+          className="text-xl text-gray-700 mb-8 text-center"
+        >
           Umów się na terapię lub konsultację
-        </p>
+        </motion.p>
 
         {/* Dane kontaktowe */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <motion.div
+          variants={staggerContainer}
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12"
+        >
           {/* Lewa kolumna - Informacje kontaktowe */}
-          <div className="bg-gradient-to-br from-orange-100 to-purple-100 p-6 rounded-lg animate-fadeIn delay-200">
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gradient-to-br from-orange-100 to-purple-100 p-6 rounded-lg"
+          >
             <h3 className="text-2xl font-semibold text-purple-900 mb-4">Dane kontaktowe</h3>
             <ul className="text-gray-700 text-lg space-y-4">
               <li>
@@ -29,10 +63,13 @@ const Contact = () => {
                 <strong>Godziny otwarcia:</strong> Poniedziałek - Piątek, 8:00 - 18:00
               </li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* Prawa kolumna - Mapa Google */}
-          <div className="bg-gradient-to-br from-orange-100 to-purple-100 p-6 rounded-lg animate-fadeIn delay-300">
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gradient-to-br from-orange-100 to-purple-100 p-6 rounded-lg"
+          >
             <h3 className="text-2xl font-semibold text-purple-900 mb-4">Lokalizacja</h3>
             <div className="overflow-hidden rounded-lg">
               <iframe
@@ -45,17 +82,24 @@ const Contact = () => {
                 title="Mapa lokalizacji"
               ></iframe>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Przycisk */}
-        <div className="text-center animate-fadeIn delay-400">
-          <button className="bg-purple-900 text-white px-12 py-4 rounded-lg hover:bg-purple-800  duration-300 text-lg font-semibold transform transition-all hover:scale-105">
-            Umów się na konsultację
+        <motion.div
+          variants={fadeInUp}
+          className="text-center"
+        >
+          <a href="tel:+48123456789">
+
+          <button className="bg-orange-400 text-white px-12 py-4 rounded-lg hover:bg-orange-500  duration-300 text-lg font-semibold transform transition-all hover:scale-105">
+            Zadzwoń
           </button>
-        </div>
-      </div>
+          </a>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
+
 export default Contact;

@@ -33,7 +33,7 @@ const Navbar = () => {
 		<>
 			<nav className="w-full fixed top-0 h-24 bg-gray-100 z-30 flex md:justify-around xs:justify-between items-center shadow-md">
 				<div className="xs:ml-10 xs:text-2xl md:text-3xl font-bold animated-gradient">
-					ISKIERKA WNM
+				<a href="">ISKIERKA WNM</a>
 				</div>
 				<div className="md:flex xs:hidden justify-between gap-10">
 					{

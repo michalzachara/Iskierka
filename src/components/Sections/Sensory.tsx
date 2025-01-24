@@ -5,7 +5,7 @@ import './Sensory.css'
 const Sensory = () => {
 	return (
 		<section
-			className="w-full h-auto bg-gradient-to-br from-teal-100 to-teal-50 py-12 px-4 sm:px-6 lg:px-8"
+			className="w-full h-auto bg-gradient-to-b from-teal-100 to-blue-50 py-12 px-4 sm:px-6 lg:px-8"
 			id="integracja">
 			{/* Nagłówek */}
 			<div className="text-center max-w-3xl mx-auto mb-12 fade-in">
