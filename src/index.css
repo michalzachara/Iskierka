@@ -2,74 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Hover underline animation */
-.hover-underline-animation {
-	display: inline-block;
-	position: relative;
-}
-
-.hover-underline-animation::after {
-	content: '';
-	position: absolute;
-	width: 100%;
-	transform: scaleX(0);
-	height: 2px;
-	bottom: 0;
-	left: 0;
-	background-color: #0087ca;
-	transform-origin: bottom right;
-	transition: transform 0.3s ease-out;
-}
-
-.hover-underline-animation:hover::after {
-	transform: scaleX(1);
-	transform-origin: bottom left;
-}
-
-/* Active link styling */
-@layer components {
-	.active {
-		@apply font-medium text-[#0087ca] transition-all duration-300;
-	}
-
-	.active::before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		transform: scaleX(1);
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: #0087ca;
-		transition: transform 0.3s ease-out;
-	}
-
-	.link-computer {
-		@apply font-medium text-lg text-gray-700 hover:text-[#0087ca] hover-underline-animation transition-all duration-300;
-	}
-
-	.link-mobile {
-		@apply text-3xl text-gray-700 hover:text-[#0087ca] transition-all duration-300;
-	}
-}
-
-@keyframes gradientAnimation {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
-
-.animated-gradient {
-	background: linear-gradient(270deg, #0087ca, #00b894, #0087ca);
-	background-size: 200% 200%;
-	-webkit-background-clip: text;
-	background-clip: text;
-	color: transparent;
-	animation: gradientAnimation 5s ease infinite;
+html{
+  scroll-behavior: smooth;
+  scroll-padding-top: 95px;
 }

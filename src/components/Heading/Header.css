@@ -1,0 +1,8 @@
+.animated-gradient {
+	background: linear-gradient(270deg, #0087ca, #00b894, #0087ca);
+	background-size: 200% 200%;
+	-webkit-background-clip: text;
+	background-clip: text;
+	color: transparent;
+	animation: gradientAnimation 5s ease infinite;
+}
