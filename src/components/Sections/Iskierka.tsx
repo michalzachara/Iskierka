@@ -47,7 +47,7 @@ const Iskierka = () => {
       </motion.h1>
 
       {/* Kontener z dwoma kolumnami: slider i opis */}
-      <div className="flex flex-col md:flex-row gap-8 items-center xl:ml-[30%] xl:mr-[30%]">
+      <div className="flex flex-col md:flex-row gap-8 items-center xl:ml-[20%] xl:mr-[20%]">
         {/* Slider */}
         <motion.div
           initial="hidden"
