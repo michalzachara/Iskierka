@@ -2,7 +2,7 @@ const Terapia = () => {
   return (
     <section className="w-full p-6 pb-0 bg-gradient-to-b from-purple-50 to-orange-50 font-sans flex items-center justify-center" id="terapia">
       {/* Sekcja główna */}
-      <div className="max-w-4xl w-full bg-transparent p-8 rounded-xl">
+      <div className="max-w-4xl w-full bg-transparent p-2 rounded-xl">
         {/* Nagłówek */}
         <h2 className="text-6xl font-bold text-indigo-900 mb-8 text-center animate-fadeIn">
           Terapia Dziecka

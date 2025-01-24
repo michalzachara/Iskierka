@@ -69,7 +69,7 @@ const Navbar = () => {
 				{
 					links.map((link) => (
 						<Link
-							key={link}
+							key={link+"1"}
 							href={`#${link}`}
 							dataType={link}
 							activeLink={activeLink}
