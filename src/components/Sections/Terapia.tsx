@@ -18,7 +18,7 @@ const Terapia = () => {
         {/* Metody terapii i korzyści */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* Metody terapii */}
-          <div className="bg-orange-100 p-6 rounded-lg transform transition-all hover:scale-105 animate-fadeIn">
+          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg  duration-100 border border-indigo-100 transform transition-all hover:scale-105 animate-fadeIn">
             <h3 className="text-3xl font-semibold text-indigo-900 mb-4">Metody terapii dziecka</h3>
             <ul className="list-disc list-inside text-gray-700 text-lg">
               <li className="mb-3">Terapia zabawą – wyrażanie emocji i nauka radzenia sobie z trudnościami.</li>
@@ -29,7 +29,7 @@ const Terapia = () => {
           </div>
 
           {/* Korzyści z terapii */}
-          <div className="bg-orange-100 p-6 rounded-lg transform transition-all hover:scale-105 animate-fadeIn ">
+          <div className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg  duration-100 border border-indigo-100 transform transition-all hover:scale-105 animate-fadeIn">
             <h3 className="text-3xl font-semibold text-indigo-900 mb-4">Korzyści z terapii dziecka</h3>
             <ul className="list-disc list-inside text-gray-700 text-lg">
               <li className="mb-3">Poprawa umiejętności komunikacyjnych i społecznych.</li>
@@ -71,9 +71,6 @@ const Terapia = () => {
             "Terapia to podróż w głąb siebie, a my jesteśmy tu, aby Ci towarzyszyć."
           </p>
         </div>
-
-        {/* Przycisk */}
-        
       </div>
     </section>
   );

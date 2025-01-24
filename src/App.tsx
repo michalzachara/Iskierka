@@ -4,6 +4,7 @@ import Sensory from "./components/Sections/Sensory"
 import Contact from "./components/Contact/Contact"
 import Iskierka from "./components/Sections/Iskierka" 
 import Terapia from "./components/Sections/Terapia"
+import Footer from "./components/Footer"
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Terapia />
         <Contact />
       </main>
+      <Footer />
     </>
   )
 }
